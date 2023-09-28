@@ -1,0 +1,48 @@
+Video Upload:
+
+Header Section:
+
+VideoFlow Logo
+Navigation Menu (Links to Dashboard, Video Upload, Video Management, Analytics, Help, Account, Logout)
+User Profile (Profile Picture, Username)
+Video Upload Page:
+
+Title: "Upload Your Video"
+Upload Form:
+Video Upload Button
+Video Title Field
+Video Description Field
+Tags Field
+Privacy Settings (Public, Unlisted, Private)
+Upload Progress Bar
+"Upload" Button to start the upload process.
+Video Preview:
+
+After upload completion, display a preview of the uploaded video.
+Option to play, pause, and seek through the video.
+Buttons for editing video details or confirming the upload.
+Edit Video Details:
+
+Allow users to edit video details (title, description, tags, privacy settings) before confirming the upload.
+Confirm Upload:
+
+Confirmation message asking the user to confirm the upload.
+Buttons for "Confirm" and "Cancel."
+Upload Progress:
+
+Display a progress bar showing the status of the upload.
+Upload Success:
+
+Confirmation message of successful video upload.
+Option to return to the dashboard or manage the uploaded video.
+Error Handling:
+
+If there are errors during the upload process (e.g., unsupported file format, network issues), provide clear error messages and instructions on how to resolve them.
+Footer Section:
+
+Contact Information (Email, Phone)
+Links to Privacy Policy, Terms of Service, and Help/Support
+Social Media Icons/Links
+Copyright Information:
+
+Copyright notice for your Video Upload section.

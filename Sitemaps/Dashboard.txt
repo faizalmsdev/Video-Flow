@@ -1,0 +1,53 @@
+Dashboard:
+
+Header Section:
+
+VideoFlow Logo
+Navigation Menu (Links to Dashboard, Video Upload, Video Management, Analytics, Help, Account, Logout)
+User Profile (Profile Picture, Username)
+Dashboard Overview:
+
+Welcome message to the user.
+Quick access to essential features and recent activity.
+Account Information:
+
+User's account details (e.g., name, email, profile picture).
+Option to update account information.
+YouTube Integration:
+
+Display the status of YouTube account integration (connected/disconnected).
+Option to connect or disconnect YouTube account.
+Video Upload:
+
+Button to upload a new video.
+Form to specify video details (title, description, tags, privacy settings) before uploading.
+Video Management:
+
+List of user's uploaded videos with thumbnails and basic details (title, upload date).
+Options to edit, delete, or publish videos.
+Search and filter options for video management.
+Collaboration Requests:
+
+Notifications for collaboration requests from editors.
+Option to review and approve/reject requests.
+Analytics Overview:
+
+Summary of video performance analytics (e.g., total views, likes, comments).
+Graphs or charts showing video statistics.
+Account Settings:
+
+Manage personal account settings, including password and notification preferences.
+Help and Support:
+
+Access to FAQs, user guides, and contact support.
+Logout:
+
+Option to log out of the application.
+Footer Section:
+
+Contact Information (Email, Phone)
+Links to Privacy Policy, Terms of Service, and Help/Support
+Social Media Icons/Links
+Copyright Information:
+
+Copyright notice for your dashboard content.

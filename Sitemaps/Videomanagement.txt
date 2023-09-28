@@ -1,0 +1,62 @@
+Video Management:
+
+Header Section:
+
+VideoFlow Logo
+Navigation Menu (Links to Dashboard, Video Upload, Video Management, Analytics, Help, Account, Logout)
+User Profile (Profile Picture, Username)
+Video Management Page:
+
+Title: "Manage Your Videos"
+List of Uploaded Videos:
+Thumbnail
+Video Title
+Upload Date
+Edit Button (to edit video details)
+Delete Button (to delete the video)
+Publish Button (if the video is not already published)
+Video Details Page:
+
+Title: "Video Details"
+Display the selected video's details:
+Thumbnail
+Video Title
+Description
+Tags
+Privacy Settings
+Views Count
+Likes Count
+Comments Count
+Buttons to edit, delete, or return to the video list.
+Edit Video Details Page:
+
+Title: "Edit Video Details"
+Form to edit video details:
+Video Title Field
+Description Field
+Tags Field
+Privacy Settings (Public, Unlisted, Private)
+"Save" Button to save the changes.
+Delete Video Confirmation:
+
+Confirmation message asking the user to confirm video deletion.
+Buttons for "Confirm" and "Cancel."
+Publish Video Confirmation:
+
+Confirmation message asking the user to confirm video publishing.
+Buttons for "Confirm" and "Cancel."
+Publish Success:
+
+Confirmation message of successful video publishing.
+Option to return to the video list or view the published video on YouTube.
+Error Handling:
+
+If there are errors during editing, deleting, or publishing videos, provide clear error messages and instructions on how to resolve them.
+Footer Section:
+
+Contact Information (Email, Phone)
+Links to Privacy Policy, Terms of Service, and Help/Support
+Social Media Icons/Links
+Copyright Information:
+
+Copyright notice for your Video Management section.
