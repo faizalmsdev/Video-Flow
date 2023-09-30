@@ -1,5 +1,6 @@
     import React from 'react';
     import "./login.css";
+    import { Link } from 'react-router-dom';
 
     const Login = () => {
     return (
@@ -47,7 +48,7 @@
             
                 
                 <div className="sign-up ">
-                    <p>Don't have an account? <b>Sign up!</b></p>
+                    <p>Don't have an account? <b><Link to="/Sign-up">Sign up!</Link> </b></p>
                 </div>
             </div>
         </body>
