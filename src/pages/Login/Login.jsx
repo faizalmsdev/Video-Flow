@@ -1,8 +1,32 @@
     import React from 'react';
+    import { auth , provider } from '../../config/firebase'
+    import { signInWithPopup } from 'firebase/auth'
     import "./login.css";
-    import { Link } from 'react-router-dom';
+    import { Link, Navigate, useNavigate } from 'react-router-dom';
+    import { useState } from 'react';
 
     const Login = () => {
+        const [isLoggedIn, setIsLoggedIn] = useState(false);
+        const navigate = useNavigate();
+
+
+        const signInWithGoogle =async ()=>{
+            const results = await signInWithPopup(auth,provider);
+            const authInfo ={
+                userID : results.user.uid,
+                name:results.user.displayName,
+                profilePhoto:results.user.photoURL,
+                isAuth:true,
+            }
+            localStorage.setItem("auth",JSON.stringify(authInfo));
+            setIsLoggedIn(true);
+            navigate("/src/pages/Main/Main.jsx");
+        }
+
+        if(isLoggedIn){
+            return <Navigate to="/src/pages/Main/Main.jsx" />
+        }
+
     return (
         <body>
             <div className="login-form">
@@ -26,7 +50,7 @@
                         <p>Log In {'>>'}</p>
                     </div>
 
-                    <button className="g-button">
+                    <button className="g-button" onClick={signInWithGoogle}>
                         <svg
                             xmlnsXlink="http://www.w3.org/1999/xlink"
                             xmlns="http://www.w3.org/2000/svg"
