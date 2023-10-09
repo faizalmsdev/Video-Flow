@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './forgetpassword.css';
 import { auth, sendPasswordResetEmail } from '../../config/firebase';
 
 const ForgotPassword = () => {
@@ -16,15 +17,20 @@ const ForgotPassword = () => {
     };
 
     return (
-        <div>
+        <div className='login-form forget-form'>
             <h2>Forgot Password</h2>
             {resetSent ? (
                 <p>Reset email sent. Check your inbox for further instructions.</p>
             ) : (
                 <form onSubmit={handleResetPassword}>
+                <span >
                     <label>Email:</label>
                     <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                    <button type="submit">Reset Password</button>
+                </span>
+                    {/* <button className='reset primary' type="submit">Reset Password</button> */}
+                    <button className='button' type='submit'>
+                            <p>Reset Password</p>
+                    </button>
                 </form>
             )}
         </div>
