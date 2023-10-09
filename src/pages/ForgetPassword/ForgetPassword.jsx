@@ -5,14 +5,17 @@ import { auth, sendPasswordResetEmail } from '../../config/firebase';
 const ForgotPassword = () => {
     const [email, setEmail] = useState('');
     const [resetSent, setResetSent] = useState(false);
+    const[error,setError] =useState(false);
 
     const handleResetPassword = async (e) => {
         e.preventDefault();
         try {
             await sendPasswordResetEmail(auth, email);
             setResetSent(true);
+            setEmail('');
         } catch (error) {
             console.error('Error sending reset email:', error);
+            setError(true);
         }
     };
 
@@ -23,12 +26,13 @@ const ForgotPassword = () => {
                 <p>Reset email sent. Check your inbox for further instructions.</p>
             ) : (
                 <form onSubmit={handleResetPassword}>
-                <span >
-                    <label>Email:</label>
-                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                </span>
+                <div className='login-input-container'>
+                <label>Email:</label>
+                    <input className='input-content' type="email" value={email} required onChange={(e) => setEmail(e.target.value)} />
+                </div>
+                <p className={`${error ? 'danger' : 'hide' }`}>Please check your mail id! </p>
                     {/* <button className='reset primary' type="submit">Reset Password</button> */}
-                    <button className='button' type='submit'>
+                    <button className='button2' type='submit'>
                             <p>Reset Password</p>
                     </button>
                 </form>
