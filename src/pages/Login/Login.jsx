@@ -1,14 +1,29 @@
     import React from 'react';
-    import { auth , provider } from '../../config/firebase'
+    import { auth , provider , signInWithEmailAndPassword } from '../../config/firebase';
     import { signInWithPopup } from 'firebase/auth'
     import "./login.css";
-    import { Link, Navigate, useNavigate } from 'react-router-dom';
+    import { Link , useNavigate } from 'react-router-dom';
     import { useState } from 'react';
 
     const Login = () => {
         const [isLoggedIn, setIsLoggedIn] = useState(false);
+        const [email,setEmail] = useState('');
+        const [password,setPassword] = useState('');
         const navigate = useNavigate();
 
+
+        const handleEmailSignIn = async (e)=>{
+            try{
+                const user = await signInWithEmailAndPassword(auth , email , password);
+                if (user){
+                    navigate("/src/pages/Main/Main.jsx");
+                    }else{
+                        alert('Something went wrong')
+                        }
+            }catch(err){
+                console.log(err)
+            }
+        }
 
         const signInWithGoogle =async ()=>{
             const results = await signInWithPopup(auth,provider);
@@ -24,7 +39,7 @@
         }
 
         if(isLoggedIn){
-            return <Navigate to="/src/pages/Main/Main.jsx" />
+            navigate("/src/pages/Main/Main.jsx");
         }
 
     return (
@@ -32,22 +47,25 @@
             <div className="login-form">
                 <h1>Welcome Back!</h1>
                 <div className="login-input-container">
-                    <input className="input-content" type="email" placeholder="" maxLength="50" required />
+                    <input className="input-content" type="email" placeholder="" value={email} onChange={(e) => setEmail(e.target.value)} maxLength="50" required />
                     <label>Email</label>
                 </div>
                 <div className="login-input-container">
-                    <input className="input-content" type="password" placeholder="" maxLength="50" required />
+                    <input className="input-content" type="password" placeholder="" value={password} onChange={(e) => setPassword(e.target.value)} maxLength="50" required />
                     <label>Password</label>
                 </div>
                 <div className="login-sub">
                     <div>
-                        <p className='fp'>Forgot password?</p>
+                        <p className='fp'> <Link className='fpp' to={"/forgot-password"}>  Forgot password? </Link></p>
                     </div>
                 </div>
                 <div className="btn-container">
 
                     <div className="login-btn ">
-                        <p>Log In {'>>'}</p>
+                        <button className='button' onClick={handleEmailSignIn}>
+                            <p>Log In {'>>'}</p>
+                        </button>
+                        
                     </div>
 
                     <button className="g-button" onClick={signInWithGoogle}>

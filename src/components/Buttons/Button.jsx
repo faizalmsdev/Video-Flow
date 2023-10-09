@@ -1,9 +1,9 @@
     import React from 'react';
     import "./button.css"
 
-    const Button = ({text}) => {
+    const Button = ({text , type}) => {
     return (
-        <button className="signupBtn">
+        <button className="signupBtn" type={type}>
             {text}
             <span className="arrow">
                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512" fill="rgb(183, 128, 255)">
