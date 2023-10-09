@@ -22,7 +22,6 @@
                         setError(true);
                         }
             }catch(err){
-                console.log(err);
                 setError(true);
             }
         }
