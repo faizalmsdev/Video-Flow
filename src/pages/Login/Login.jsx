@@ -9,6 +9,7 @@
         const [isLoggedIn, setIsLoggedIn] = useState(false);
         const [email,setEmail] = useState('');
         const [password,setPassword] = useState('');
+        const[error,setError] =useState(false);
         const navigate = useNavigate();
 
 
@@ -18,10 +19,11 @@
                 if (user){
                     navigate("/src/pages/Main/Main.jsx");
                     }else{
-                        alert('Something went wrong')
+                        setError(true);
                         }
             }catch(err){
-                console.log(err)
+                console.log(err);
+                setError(true);
             }
         }
 
@@ -59,6 +61,7 @@
                         <p className='fp'> <Link className='fpp' to={"/forgot-password"}>  Forgot password? </Link></p>
                     </div>
                 </div>
+                <p className={`${error ? 'danger' : 'hide' }`}>Please check your mail id & password </p>
                 <div className="btn-container">
 
                     <div className="login-btn ">
